@@ -1,0 +1,12 @@
+.cat{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    
+}
+.cat-name{
+    border: 1px solid black;
+}
