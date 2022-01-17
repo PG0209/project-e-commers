@@ -3,17 +3,10 @@
 import { ActionTypes } from "../Constants/action-types";
 
 const intitialCategory = {
-  categories: [ 
-    "name",
-    "age",
-    "job"
-  ],
+  categories: [ ],
 };
 
-export const productCategoryReducer = (
-  state = intitialCategory,
-  { type, payload }
-) => {
+export const productCategoryReducer = (state = intitialCategory, { type, payload }) => {
   switch (type) {
     case ActionTypes.PRODUCT_CATEGORIES:
       return  { ...state, categories: payload };
@@ -22,23 +15,21 @@ export const productCategoryReducer = (
   }
 };
 
-export const selectedCategoryReducer = (
-  state = {},
-  { type, payload }
+export const selectedCategoryReducer = (state = {}, { type, payload }
 ) => {
   switch (type) {
     case ActionTypes.SELECTED_CATEGORY:
-      return {...state, categories: payload};
+      return {...state, ...payload};
     default:
       return state;
   }
 };
 
-const initialState = {
+const initialProducts = {
   products: [],
 };
 
-export const productReducer = (state = initialState, { type, payload }) => {
+export const productReducer = (state = initialProducts, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS:
       return { ...state, products: payload };

@@ -1,12 +1,12 @@
 import { ActionTypes } from "../Constants/action-types"
 
-export const productCategory = (categories) => {
+export const productCategories = (categories) => {
     return {
         type: ActionTypes.PRODUCT_CATEGORIES ,
         payload: categories,
     }
 };
-
+ 
 export const selctedCategory = (category) => {
     return {
         type: ActionTypes.SELECTED_CATEGORY,

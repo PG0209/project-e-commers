@@ -15,6 +15,7 @@ const ProductDetail = () => {
   const product = useSelector((state) => state.product);
   const { price, title, id, category, image} = product;
   const { productId } = useParams();
+  console.log(productId);
   const dispatch = useDispatch();
 
   const fetchProductDetail = async () => {
@@ -48,7 +49,6 @@ const ProductDetail = () => {
           </div>
         </div>
       )}
-
       <Footer />
     </>
   );

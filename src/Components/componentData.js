@@ -54,4 +54,23 @@ export const slidesData = [
       id:8,
       img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
     },
-  ]
+  ];
+
+export const cat = [
+  {
+    id:1,
+    img:"https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+  },
+  {
+    id:2,
+    img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+  },
+  {
+    id:3,
+    img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+  },
+  {
+    id:4,
+    img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+  },
+]

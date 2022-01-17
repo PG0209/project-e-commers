@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products);
+  //console.log(products);
 
   return (
     <>

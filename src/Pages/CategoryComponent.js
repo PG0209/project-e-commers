@@ -1,13 +1,10 @@
 /** @format */
 
-import React, { useEffect }  from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import {useSelector, useDispatch} from "react-redux"
-import { productCategory } from "../Redux/Actions/productActions";
+import { useSelector } from "react-redux";
 
- 
 const Container = styled.div`
   background-color: #f0ede6;
   padding: 20px;
@@ -45,59 +42,23 @@ const Tag = styled.h6`
 `;
 
 const Category = () =>{
-  const categories = useSelector((state) => state );
-  const dispatch = useDispatch( );
-
-  const fetchCat = async () =>{
-    const response = await axios
-  .get("https://fakestoreapi.com/products/categories")
-  .catch((error) =>{
-    console.log("error", error);
-  })
-  dispatch(productCategory(response.data));
-  }
-  useEffect(() => {
-     fetchCat();
-  }, [ ])
-  console.log("categories", categories);
-  
+  const categories = useSelector(state => state.allCategory.categories)
+  //console.log(categories);
      return (
-    <Container>
-      <>
-        <Link to="mensfashion" style={{textDecoration: 'none'}}>
+      <Container>
+        {
+          categories.map(post =>{
+            const {category}= post;
+            return(
+              <Link to={`/category/${category}`} style={{textDecoration: 'none'}}>
           <Card>
-            <Image src={"https://i.ibb.co/TTQCqB5/b1-c.png"} />
-            <Tag>MEN'S CLOTHS</Tag>
+            <Tag>{post}</Tag>
           </Card>
         </Link>
-        <Link to="womensfashion" style={{textDecoration: 'none'}}>
-        <Card>
-          <Image
-            src={
-              "https://i.ibb.co/Kr7Cnxb/Full-length-portrait-of-a-happy-excited-girl-in-bright-colorful-clothes-holding-shopping-bags-while.jpg"
-            }
-          />
-          <Tag>WOMEN'S CLOTHS</Tag>
-        </Card>
-        </Link>
-        <Link to="electronicitems" style={{textDecoration: 'none'}}>
-        <Card>
-          <Image src={"https://i.ibb.co/bbNKVS2/e1-c.jpg"} />
-          <Tag>ELECTRONICS</Tag>
-        </Card>
-        </Link>
-        <Link to="jewellery" style={{textDecoration: 'none'}}>
-        <Card>
-          <Image
-            src={
-              "https://i.ibb.co/Q9shLVZ/Concept-of-wedding-accessories-with-wedding-ring-close-up.jpg"
-            }
-          />
-          <Tag>JWELLERY</Tag>
-        </Card>
-        </Link>
-      </>
-    </Container>
+            )
+          })
+        }
+      </Container>
   );
 }
 export default Category;

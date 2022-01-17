@@ -7,8 +7,7 @@ import {setProducts} from "../Redux/Actions/productActions"
 import ProductComponent from "./ProductComponent";
 
 const ProductListing = () => {
-  const products = useSelector((state) => state );
-
+  const products = useSelector((state) => state);
   const dispatch = useDispatch();
 
     const fetchProducts = async () =>{
@@ -21,7 +20,7 @@ const ProductListing = () => {
     }
     useEffect(() =>{
       fetchProducts();
-    },[ ]);
+    },[]);
     console.log("products:", products);
      return(
          <>

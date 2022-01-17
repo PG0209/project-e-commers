@@ -15,7 +15,8 @@ import Newsletter from "./Components/NewsLetter";
 import PopularProducts from "./Components/popularProducts/PopularProducts";
 import ProductListing from "./Pages/ProductListing"
 import ProductDetail from "./Pages/ProductDetail";
-import catListing from "./Pages/catListing";
+import CategoryListing from "./Pages/CategoryListing";
+import SpecificCategory from "./Pages/SpecificCategory";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <>
           <Header/>
           <Sliders />
-          <CategoryComponent />
+          <CategoryListing/>
           <PopularProducts/>
           <Newsletter/>
           <Footer />
@@ -36,8 +37,8 @@ function App() {
         <Route path="/jewellery" element={<JewelleryProducts/>}/>
         <Route path="/products" element={<ProductListing/>}/>
         <Route path="/product/:productId" element={<ProductDetail/>}/>
-        <Route path="/categories" element={<catListing/>}/>
-      </Routes>
+        <Route path="/product/category/electronics" element={<SpecificCategory/>}/>
+       </Routes>
     </Router>
   );
 }
